@@ -1,0 +1,88 @@
+:root{
+    /* --- Dark theme (default) --- */
+    --bg:        #050b18;           /* Main page bg — deep space */
+    --bg2:       #070f20;           /* Slightly lighter bg, used for footer */
+    --surface:   rgba(10,20,45,0.7);   /* Card / panel bgs */
+    --surface2:  rgba(14,30,65,0.85);  /* More opaque panels */
+    /* Brand colors — blue/cyan/green palette */
+    --blue:      #0ea5e9;           /* Primary accent — sky blue */
+    --blue2:     #38bdf8;           /* Lighter blue for hover states */
+    --cyan:      #06b6d4;           /* Secondary accent — cyan */
+    --green:     #10d9a0;           /* Tertiary accent — mint green */
+    /* Typography colors */
+    --text:      #e2eaf5;           /* Main body text */
+    --text2:     #8ba3c7;           /* Muted / secondary text */
+    --text3:     #4a6285;           /* Very muted text (timestamps, labels) */
+    /* Border and glow effects */
+    --border:    rgba(14,165,233,0.15);  /* Subtle borders */
+    --border2:   rgba(14,165,233,0.3);   /* borders on hover */
+    --glow:      rgba(14,165,233,0.2);   /* Box shadow glow */
+    --glow2:     rgba(14,165,233,0.5);   /* Stronger glow */
+    --card-bg:   rgba(7,18,42,0.8);      /* card bg */
+    --nav-bg:    rgba(5,11,24,0.85);     /* Navbar bg */
+}
+
+[data-theme="light"] {
+      --bg:        #f0f4ff;
+      --bg2:       #e4ecff;
+      --surface:   rgba(255,255,255,0.75);
+      --surface2:  rgba(230,240,255,0.9);
+      --text:      #0f1f3d;
+      --text2:     #2d5086;
+      --text3:     #6a8fc0;
+      --border:    rgba(14,165,233,0.2);
+      --border2:   rgba(14,165,233,0.4);
+      --glow:      rgba(14,165,233,0.15);
+      --card-bg:   rgba(255,255,255,0.85);
+      --nav-bg:    rgba(240,244,255,0.9);
+    }
+
+*, *::before, *::after {
+      box-sizing: border-box;  /* padding/border included in width/height */
+      margin: 0;
+      padding: 0;
+    }    
+
+  nav{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;                  /* High z-index so it's always on top */
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);    /* Frosted glass blur effect */
+      -webkit-backdrop-filter: blur(20px); /* Safari support */
+      border-bottom: 1px solid var(--border);
+      padding: 0 6%;
+      height: 68px;
+      display: flex;
+      align-items: center;            /* Vertically center nav items */
+      justify-content: space-between;
+    }   
+    
+  .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      /* Gradient text trick: clip a gradient to the text shape */
+      background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }    
+
+  .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    
+  .nav-links a {
+      text-decoration: none;
+      color: var(--text2);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;   /* needed so the ::after pseudo-element is positioned relative to it */
+    }    

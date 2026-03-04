@@ -41,8 +41,11 @@ It serves as a personal collection of resources, code snippets, and projects tha
     /* ============================================================
        CSS CUSTOM PROPERTIES (Variables)
        Defined on :root so every element can access them.
+       :root is a CSS pseudo-class that targets the root element of your document. In HTML, this is the <html> element.
        Think of these like constants you set once and reuse everywhere.
        To change the whole color scheme, just edit values here.
+
+       N.B. : It has higher specificity.
     ============================================================ */
     :root {
       /* --- Dark theme (default) --- */
