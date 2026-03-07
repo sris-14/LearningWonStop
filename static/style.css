@@ -122,3 +122,7 @@
       overflow-x: hidden;  /* Prevent horizontal scroll from animations */
       cursor: none;        /* Hide default cursor — we use a custom one */
     }
+
+    .cursor{
+      
+    }
