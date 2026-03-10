@@ -30,5 +30,77 @@
             <a href="#contact" class="hire-btn">Hire Me</a>
         </div>
     </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="typedRole">Learner</span>
+                <span class="typed-cursor"></span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="line1">From Ideas to Apps :) </span>
+                <span class="highlight">Creation</span>
+            </h1>
+
+            <p class="hero-sub">I build web experiences — living at the intersection of
+               <strong style="color:var(--blue)">design</strong>,
+               <strong style="color:var(--cyan)">engineering</strong>, and
+               <strong style="color:var(--green)">innovation</strong>.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View My Work<span>→</span></a>
+                <a href="#contact" class="btn-outline">Let's Talk</a>
+            </div>
+
+            <div class="hero-stats">
+               <div class="stat">
+                   <div class="stat-num" data-count="42">0</div>
+                   <div class="stat-label">Projects Shipped</div>
+               </div>
+               <!-- <div class="stat">
+                   <div class="stat-num" data-count="6">0</div>
+                   <div class="stat-label">Years Experience</div>
+               </div>
+               <div class="stat">
+                   <div class="stat-num" data-count="18">0</div>
+                   <div class="stat-label">Happy Clients</div>
+               </div> -->
+            </div>
+        </div>
+
+        <div class="float-code" style="top:18%;right:10%">const universe = await build();</div>
+        <div class="float-code" style="top:33%;right:24%">{ stars: ∞, bugs: 0 }</div>
+        <div class="float-code" style="bottom:26%;right:9%">npm run deploy --cosmos</div>
+        <div class="float-code" style="bottom:40%;right:28%">02:47 ◆ All systems nominal</div>
+    </section>
+
+    <script>
+        const cursorDot = document.getElementById('cursor');
+        const cursorRing = document.getElementById("cursorRing");
+
+        let mx = 0, my = 0, rx=0, ry=0;
+
+        document.addEventListener('mousemove', e =>{
+            mx = e.clientX;
+            my = e.clientY;
+
+            cursorDot.style.left = mx+'px';
+            cursorDot.style.top  = my + 'px';
+        });
+
+        (function animateRing(){
+            rx += (mx-rx) *0.12;
+            ry += (my-ry) *0.12;
+
+            cursorRing.style.left = rx + 'px';
+            cursorRing.style.top  = ry + 'px';
+            requestAnimationFrame(animateRing);
+
+        })();
+
+    </script>
 </body>
 </html>
