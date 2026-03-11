@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srishti- Portfolio</title>
+    <meta name="description" content="Portfolio of Srishti-Python Developer &amp; AI Builder">
+    <meta name="Author" content="Srishti">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="cursor" class="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    
+    <!-- solarsystem -->
+    <nav>
+        <a href="#hero" class="nav-logo">Hello</a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="theme-toggle" id="themetoggle" aria-label="Toggle theme">🌙</button>
+            <a href="#contact" class="hire-btn">Hire Me</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="typedRole">Learner</span>
+                <span class="typed-cursor"></span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="line1">From Ideas to Apps :) </span>
+                <span class="highlight">Creation</span>
+            </h1>
+
+            <p class="hero-sub">I build web experiences — living at the intersection of
+               <strong style="color:var(--blue)">design</strong>,
+               <strong style="color:var(--cyan)">engineering</strong>, and
+               <strong style="color:var(--green)">innovation</strong>.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View My Work<span>→</span></a>
+                <a href="#contact" class="btn-outline">Let's Talk</a>
+            </div>
+
+            <div class="hero-stats">
+               <div class="stat">
+                   <div class="stat-num" data-count="42">0</div>
+                   <div class="stat-label">Projects Shipped</div>
+               </div>
+               <!-- <div class="stat">
+                   <div class="stat-num" data-count="6">0</div>
+                   <div class="stat-label">Years Experience</div>
+               </div>
+               <div class="stat">
+                   <div class="stat-num" data-count="18">0</div>
+                   <div class="stat-label">Happy Clients</div>
+               </div> -->
+            </div>
+        </div>
+
+        <div class="float-code" style="top:18%;right:10%">const universe = await build();</div>
+        <div class="float-code" style="top:33%;right:24%">{ stars: ∞, bugs: 0 }</div>
+        <div class="float-code" style="bottom:26%;right:9%">npm run deploy --cosmos</div>
+        <div class="float-code" style="bottom:40%;right:28%">02:47 ◆ All systems nominal</div>
+    </section>
+
+    <section id="about">
+        <!-- .reveal class = starts hidden, becomes visible on scroll (via IntersectionObserver) -->
+        <div class="section-label reveal">// about.me</div>
+        <div class="section-title reveal">I'm a <span class="accent">Full-Stack</span><br>Builder & Thinker</div>
+        <div class="section-divider reveal"></div>
+    </section>
+
+    
+    <!-- contact section -->
+    <section id="contact">
+       <div class="section-label reveal">// contact.init()</div>
+
+       <div class="contact-grid">
+
+       <!-- LEFT: The actual form -->
+       <div class="contact-form-wrap reveal">
+           <div class="form-title">Send a Message</div>
+           <p class="form-subtitle">Got a project in mind? I'd love to hear about it. Fill in the form and I'll get back to you within 24 hours.</p>
+
+           <div id="contactForm">
+
+                <!-- Name + Email row (2 columns) -->
+                <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="inputName">Your Name</label>
+                      <input class="form-input" type="text" id="inputName" placeholder="Alex Johnson" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="inputEmail">Email Address</label>
+                      <input class="form-input" type="email" id="inputEmail" placeholder="alex@company.com" required>
+                    </div>
+                </div>
+        
+                <!-- Subject -->
+                <div class="form-group">
+                    <label class="form-label" for="inputSubject">Subject</label>
+                    <input class="form-input" type="text" id="inputSubject" placeholder="Project proposal / Collaboration / Just saying hi...">
+                </div>
+        
+                <!-- Message -->
+                <div class="form-group">
+                    <label class="form-label" for="inputMessage">Message</label>
+                    <textarea class="form-input" id="inputMessage" rows="5" placeholder="Tell me about your project, idea, or just say hello. I read every message."></textarea>
+                </div>
+    
+                <!-- Submit button — onclick calls submitForm() defined in JavaScript -->
+                <button class="form-submit" onclick="submitForm()">
+                    <span id="btnText">Send Message</span>
+                    <!-- Spinner is hidden by default; shown during loading -->
+                    <div class="spinner" id="submitSpinner"></div>
+                    <span id="btnIcon">🚀</span>
+                </button>
+        
+                <!-- Toast notification shown after form submission -->
+                <div class="form-toast" id="formToast"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Contact info column -->
+        <div class="contact-info reveal">
+           <div class="contact-info-title">
+              Let's build<br><span style="color:var(--blue)">something great.</span>
+           </div>
+           <p class="contact-info-desc">
+               I'm currently available for freelance projects, full-time roles, and ambitious ideas.
+               Whether you have a clear brief or just a spark — I'd love to talk.
+           </p>
+
+            <!-- Email detail -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon">✉️</div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value">
+                  <a href="mailto:hello@yourportfolio.dev">hello@yourportfolio.dev</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location detail -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div>
+                <div class="contact-detail-label">Location</div>
+                <div class="contact-detail-value">India</div>
+              </div>
+            </div>
+
+            <!-- Availability status -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon">⚡</div>
+              <div>
+                <div class="contact-detail-label">Status</div>
+                <div class="contact-detail-value" style="color:var(--green)">
+                  Available for new projects
+                </div>
+              </div>
+            </div>
+
+            <!-- Social links row -->
+            <div class="contact-socials">
+              <a href="https://github.com"   class="social-link" target="_blank">⌥ GitHub</a>
+              <a href="https://linkedin.com" class="social-link" target="_blank">in LinkedIn</a>
+              <a href="https://twitter.com"  class="social-link" target="_blank">✕ Twitter</a>
+            </div>
+       </div>
+       </div>
+    </section>
+
+    <script>
+        const cursorDot = document.getElementById('cursor');
+        const cursorRing = document.getElementById("cursorRing");
+
+        let mx = 0, my = 0, rx=0, ry=0;
+
+        document.addEventListener('mousemove', e =>{
+            mx = e.clientX;
+            my = e.clientY;
+
+            cursorDot.style.left = mx+'px';
+            cursorDot.style.top  = my + 'px';
+        });
+
+        (function animateRing(){
+            rx += (mx-rx) *0.12;
+            ry += (my-ry) *0.12;
+
+            cursorRing.style.left = rx + 'px';
+            cursorRing.style.top  = ry + 'px';
+            requestAnimationFrame(animateRing);
+
+        })();
+
+    </script>
+</body>
+</html>

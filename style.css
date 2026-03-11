@@ -430,8 +430,12 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    
+    
 
-    /* # --------- RESPONSIVENESS ------- # */
+
+    /* # --------- RESPONSIVENESS : MOBILE BREAKPOINTS ------- # */
+
     @media (max-width: 900px) {
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     }
