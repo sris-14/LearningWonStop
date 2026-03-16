@@ -189,7 +189,264 @@
     </div>
 
     <!-- project section -->
-    
+    <section id="projects">
+    <div class="section-label reveal">// projects.featured</div>
+    <div class="section-title reveal">Things I've <span class="accent">Built</span></div>
+    <p class="section-desc reveal">A selection of projects that push boundaries — each one a small universe of its own.</p>
+
+    <!-- reveal-stagger = children appear one after another with CSS delays -->
+    <div class="projects-grid reveal-stagger">
+
+      <!-- Jinja2 loop over the PROJECTS list from app.py -->
+      
+      <div class="project-card reveal"
+           data-color="#0ea5e9"
+           style="--card-accent: #0ea5e9;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">🧠</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-live
+            ">
+            Live
+          </div>
+        </div>
+
+        <div class="card-category">Artificial Intelligence</div>
+        <div class="card-title">Nebula AI</div>
+        <div class="card-desc">A deep learning platform that predicts user behavior patterns using transformer-based neural networks trained on multi-modal data.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">Python</span>
+          
+          <span class="tech-tag">PyTorch</span>
+          
+          <span class="tech-tag">FastAPI</span>
+          
+          <span class="tech-tag">Docker</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2024</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="#" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+      <div class="project-card reveal"
+           data-color="#06b6d4"
+           style="--card-accent: #06b6d4;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">📡</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-live
+            ">
+            Live
+          </div>
+        </div>
+
+        <div class="card-category">Full Stack Web</div>
+        <div class="card-title">Orion Dashboard</div>
+        <div class="card-desc">Real-time analytics dashboard with WebSocket streams, 3D data visualizations, and ML-powered anomaly detection for enterprise scale.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">React</span>
+          
+          <span class="tech-tag">Node.js</span>
+          
+          <span class="tech-tag">D3.js</span>
+          
+          <span class="tech-tag">PostgreSQL</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2024</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="#" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+      <div class="project-card reveal"
+           data-color="#3b82f6"
+           style="--card-accent: #3b82f6;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">💎</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-beta
+            ">
+            Beta
+          </div>
+        </div>
+
+        <div class="card-category">Fintech</div>
+        <div class="card-title">Pulsar Finance</div>
+        <div class="card-desc">Blockchain-powered DeFi protocol enabling cross-chain asset swaps with zero slippage using AMM liquidity optimization algorithms.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">Solidity</span>
+          
+          <span class="tech-tag">Web3.js</span>
+          
+          <span class="tech-tag">Next.js</span>
+          
+          <span class="tech-tag">Rust</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2023</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="#" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+      <div class="project-card reveal"
+           data-color="#22d3ee"
+           style="--card-accent: #22d3ee;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">🌌</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-live
+            ">
+            Live
+          </div>
+        </div>
+
+        <div class="card-category">Developer Tools</div>
+        <div class="card-title">Cosmos CMS</div>
+        <div class="card-desc">Headless CMS with visual builder, AI content generation, and edge-first deployment — zero config, infinite scale.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">TypeScript</span>
+          
+          <span class="tech-tag">GraphQL</span>
+          
+          <span class="tech-tag">Redis</span>
+          
+          <span class="tech-tag">Cloudflare</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2023</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="#" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+      <div class="project-card reveal"
+           data-color="#0284c7"
+           style="--card-accent: #0284c7;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">⚡</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-live
+            ">
+            Live
+          </div>
+        </div>
+
+        <div class="card-category">Mobile App</div>
+        <div class="card-title">Vega Mobile</div>
+        <div class="card-desc">Cross-platform fitness app with computer vision form correction, adaptive workout AI, and social competition mechanics.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">Flutter</span>
+          
+          <span class="tech-tag">TensorFlow Lite</span>
+          
+          <span class="tech-tag">Firebase</span>
+          
+          <span class="tech-tag">Swift</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2024</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="#" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+      <div class="project-card reveal"
+           data-color="#0369a1"
+           style="--card-accent: #0369a1;">
+
+        <!-- Card header row -->
+        <div class="card-top">
+          <div class="card-icon">🚀</div>
+
+          <!-- Conditionally apply status class based on project.status value.
+               Jinja2 if/elif/else mirrors Python's if/elif/else -->
+          <div class="card-status
+            status-open">
+            Open Source
+          </div>
+        </div>
+
+        <div class="card-category">Infrastructure</div>
+        <div class="card-title">Aurora DevOps</div>
+        <div class="card-desc">GitOps-native deployment platform with automatic rollbacks, canary releases, and intelligent traffic splitting across clouds.</div>
+
+        <!-- Tech stack tags — another inner loop -->
+        <div class="card-tech">
+          
+          <span class="tech-tag">Kubernetes</span>
+          
+          <span class="tech-tag">Terraform</span>
+          
+          <span class="tech-tag">Go</span>
+          
+          <span class="tech-tag">Prometheus</span>
+          
+        </div>
+
+        <div class="card-footer">
+          <span class="card-year">2023</span>
+          <!-- Link to the project — project.link from app.py -->
+          <a href="https://github.com" class="card-arrow" target="_blank" rel="noopener">↗</a>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
 
 
 
