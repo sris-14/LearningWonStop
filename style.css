@@ -454,4 +454,15 @@
       .float-code { display: none; }  /* Hide decorations on small screens */
     }
 
-    
+    #about .about-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 15.5px;
+      color: var(--text2);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
