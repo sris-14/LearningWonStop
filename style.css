@@ -471,6 +471,8 @@
       color: var(--blue);
     }
 
+    /* info chip section */
+
     .about-chips{
       display: flex;
       flex-wrap: wrap;
@@ -480,7 +482,6 @@
     .chip{
       display: flex;
       align-items: center;
-      /* color: #8ba3c7; */
       gap: 7px;
       background: rgba(10,20,45,0.7);
       border: 1px solid rgba(14,165,233,0.2);
@@ -500,4 +501,52 @@
       font-size: 15px;
     }
 
-    
+    /* skills section */
+    .skills-grid{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .skill-header{
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 7px;
+      color: var(--text);
+    }
+
+    .skill-pct{
+      color: var(--blue);
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+    }
+
+    .skill-bar{
+      height: 4px;
+      background: var(--surface);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-fill{
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 100px;
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .skill-fill::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 8px; height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--cyan);
+    }
