@@ -550,3 +550,9 @@
       border-radius: 50%;
       box-shadow: 0 0 6px var(--cyan);
     }
+
+    #projects .projects-grid{
+      display: grid;
+      gap: 26px;
+      
+    }

@@ -553,6 +553,7 @@
     </section>
 
     <script>
+      //for cursor (ring)
         const cursorDot = document.getElementById('cursor');
         const cursorRing = document.getElementById("cursorRing");
 
@@ -576,6 +577,49 @@
 
         })();
 
+        //for card
+        
+        document.querySelectorAll('.project-card').forEach(card => {
+
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect(); // Card's size and position
+    
+          // Center of the card in screen coordinates
+          const centerX = rect.left + rect.width  / 2;
+          const centerY = rect.top  + rect.height / 2;
+    
+          // Normalized distance: -1 (far left) to +1 (far right)
+          const dx = (e.clientX - centerX) / (rect.width  / 2);
+          const dy = (e.clientY - centerY) / (rect.height / 2);
+    
+          // Rotation angles — multiply by max tilt degrees (12)
+          // rotateX: tilts top/bottom (positive = tilt away from top)
+          // rotateY: tilts left/right (positive = tilt toward right)
+          const rotX = -dy * 12; // Invert Y so top-hover tilts card top away
+          const rotY =  dx * 12;
+    
+          // Apply 3D transform
+          card.style.transform =
+            `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.025) translateZ(8px)`;
+    
+          // Dynamic shadow that shifts based on tilt direction
+          card.style.boxShadow =
+            `${-dx * 20}px ${-dy * 20}px 50px rgba(14,165,233,0.16), 0 24px 64px rgba(0,0,0,0.35)`;
+    
+          // Update the CSS custom properties used by the ::after glow gradient.
+          // These represent mouse position as a percentage of the card's dimensions.
+          const pctX = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1) + '%';
+          const pctY = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
+          card.style.setProperty('--mx', pctX);
+          card.style.setProperty('--my', pctY);
+        });
+        // Reset all transforms and shadows when mouse leaves the card
+          card.addEventListener('mouseleave', () => {
+            card.style.transform  = '';
+            card.style.boxShadow  = '';
+          });
+       });
+    
     </script>
 </body>
 </html>
