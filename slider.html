@@ -85,8 +85,8 @@
             <div class="slide">Slide 3</div>
             <div class="slide">Slide 4</div>
         </div>
-        <button class="btn-prev" onclick="changeSlide(-1)">Previous</button>
-        <button class="btn-next" onclick="changeSlide(1)">Next</button>
+        <button class="btn-prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="btn-next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
     <div class="dot" id="dots"></div>
@@ -98,7 +98,32 @@
         const dotContainer = document.getElementById('dots');
 
         // Now Create dots
-        
+        for(let i =0; i<totalSlides; i++){
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if(i===0) dot.classList.add('active');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateDots(){
+            document.querySelectorAll('.dot').forEach((d, i) => {
+               d.classList.toggle('active', i === current);
+            });
+        }
+
+        function goTo(index) {
+           current = (index + total) % total;
+           slides.style.transform = `translateX(-${current * 100}%)`;
+           updateDots();
+        }
+
+        function changeSlide(dir) {
+          goTo(current + dir);
+        }
+
+        // auto play
+        setInterval (() => changeSlide(1), 3000);
     </script>
 </body>
 </html>
