@@ -79,19 +79,22 @@
 </head>
 <body>
     <div class="slider-container">
+        <!-- 4 slides -->
         <div class="slides" id="slides">
             <div class="slide">Slide 1</div>
             <div class="slide">Slide 2</div>
             <div class="slide">Slide 3</div>
             <div class="slide">Slide 4</div>
         </div>
+        <!-- arrows which help in moving -->
         <button class="btn-prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="btn-next" onclick="changeSlide(1)">&#10095;</button>
     </div>
-
+     <!-- dots shown in the bottom of slides -->
     <div class="dots" id="dots"></div>
 
     <script>
+        // declaring variables
         let curr = 0;
         const slides = document.getElementById('slides');
         const totalSlides = slides.children.length;
@@ -105,19 +108,22 @@
             dot.addEventListener('click', () => goTo(i));
             dotContainer.appendChild(dot);
         }
-
+        
+        // dots movement updated
         function updateDots(){
             document.querySelectorAll('.dot').forEach((d, i) => {
                d.classList.toggle('active', i === curr);
             });
         }
 
+        //parsing 
         function goTo(index) {
            curr = (index + totalSlides) % totalSlides;
            slides.style.transform = `translateX(-${curr * 100}%)`;
            updateDots();
         }
 
+        //changing of slides
         function changeSlide(dir) {
           goTo(curr + dir);
         }
